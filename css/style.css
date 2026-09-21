@@ -4,6 +4,7 @@
    ============================================================ */
 
 :root {
+  color-scheme: light;
   --bg:            #f6f7f9;   /* 页面浅灰背景 */
   --surface:       #ffffff;
   --sidebar-bg:    #13161c;   /* 左侧深色栏 */
@@ -13,10 +14,27 @@
   --line:          #e4e7ec;
   --accent:        #4c6ef5;   /* 主强调色 */
   --accent-2:      #f5a623;   /* 次强调色 */
+  --content-grad:  linear-gradient(180deg, #fff6ec 0%, #f2b077 100%); /* 右侧内容区渐变 */
+  --media-bg:      #e9edf5;   /* 项目占位图背景 */
   --sidebar-width: 340px;
   --radius:        10px;
   --max-content:   880px;
   --shadow:        0 12px 30px rgba(20, 30, 60, 0.08);
+}
+
+/* ---------- 深色主题（html[data-theme="dark"]） ---------- */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:            #0f1116;
+  --surface:       #1a1f28;
+  --sidebar-bg:    #0b0e12;
+  --sidebar-text:  #9aa3b2;
+  --text:          #e6e9f0;
+  --text-soft:     #a2abba;
+  --line:          #2b3240;
+  --content-grad:  linear-gradient(180deg, #1a1e27 0%, #241f1a 100%);
+  --media-bg:      #232936;
+  --shadow:        0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -56,6 +74,13 @@ body {
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .brand {
@@ -130,6 +155,40 @@ body {
 /* ---------- 移动端顶部栏（默认隐藏） ---------- */
 .topbar { display: none; }
 
+/* ---------- 主题切换按钮（侧边栏 + 顶部栏共用） ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 10px;
+  color: var(--sidebar-text);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.theme-toggle:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.08);
+}
+.theme-toggle svg {
+  width: 18px; height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.theme-icon--sun { display: none; }
+html[data-theme="dark"] .theme-icon--sun { display: block; }
+html[data-theme="dark"] .theme-icon--moon { display: none; }
+
+/* ---------- 顶部栏右侧操作区 ---------- */
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+
 /* ============================================================
    右侧主内容区
    ============================================================ */
@@ -138,7 +197,7 @@ body {
   width: 100%;
   padding: 64px 56px 40px;
   /* 渐变铺满右侧整列，消除两侧白边 */
-  background: linear-gradient(180deg, #fff6ec 0%, #f2b077 100%);
+  background: var(--content-grad);
 }
 
 .section {
@@ -202,7 +261,7 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  background: #e9edf5;
+  background: var(--media-bg);
   aspect-ratio: 4 / 3;
 }
 .project-media img {

@@ -4,6 +4,45 @@
 (function () {
   "use strict";
 
+  /* ---------- 0. 深浅色主题切换 ---------- */
+  const THEME_KEY = "site-theme";
+  const themeButtons = document.querySelectorAll(".theme-toggle");
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    themeButtons.forEach(function (btn) {
+      btn.setAttribute(
+        "aria-label",
+        theme === "dark" ? "切换到浅色主题" : "切换到深色主题"
+      );
+    });
+  }
+
+  function getInitialTheme() {
+    try {
+      return localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light";
+    } catch (e) {
+      return "light";
+    }
+  }
+
+  setTheme(getInitialTheme());
+
+  themeButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const next =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "light"
+          : "dark";
+      setTheme(next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) {
+        /* localStorage 不可用时仅本次会话生效 */
+      }
+    });
+  });
+
   /* ---------- 1. 项目渲染（数据驱动，方便扩展） ---------- */
   const container = document.getElementById("projects");
 
