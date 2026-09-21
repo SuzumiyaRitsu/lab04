@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="郑杰文 · 软件工程专业学生，个人作品集，展示个人介绍、AI 辅助开发方向与项目作品。" />
+  <title>郑杰文 · 个人作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ======== 左侧栏：介绍 + 导航 + 技能 ======== -->
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">ZW</span>
+      <span class="brand-name">郑杰文<span class="brand-sub">Jiewen-Zheng</span></span>
+    </a>
+
+    <div class="tagline">软件工程专业学生<br />AI 辅助开发 / 大语言模型应用方向</div>
+
+    <nav class="nav" aria-label="主导航">
+      <ul>
+        <li><a href="#home" class="nav-link active">个人介绍</a></li>
+        <li><a href="#work" class="nav-link">项目作品</a></li>
+        <li><a href="#about" class="nav-link">关于我</a></li>
+        <li><a href="#contact" class="nav-link">联系方式</a></li>
+      </ul>
+    </nav>
+
+    <div class="skills">
+      <h3 class="skills-title">技能方向</h3>
+      <ul class="skills-list">
+        <li><span class="skill-dot" style="--c:#4c6ef5"></span> Python</li>
+        <li><span class="skill-dot" style="--c:#f5a623"></span> Java / Spring Boot</li>
+        <li><span class="skill-dot" style="--c:#12b886"></span> TypeScript</li>
+        <li><span class="skill-dot" style="--c:#e64980"></span> HTML / CSS / 数据可视化</li>
+        <li><span class="skill-dot" style="--c:#845ef7"></span> 大语言模型应用</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-foot">
+      <a href="mailto:yuimugi@sina.com" class="sidebar-mail">yuimugi@sina.com</a>
+      <p class="copyright">© 2026 郑杰文 · 广州软件学院</p>
+    </div>
+  </aside>
+
+  <!-- ======== 移动端顶部栏（仅移动端显示） ======== -->
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">ZW</span>
+      <span class="brand-name">郑杰文</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开导航" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ======== 右侧主内容区 ======== -->
+  <main class="content">
+    <!-- 个人介绍 Hero -->
+    <section id="home" class="section hero">
+      <p class="section-meta">01 · 个人介绍</p>
+      <h1 class="hero-title">你好，我是<span class="accent">郑杰文</span></h1>
+      <p class="hero-lead">
+        一名软件工程专业学生，主要关注 AI 辅助开发与大语言模型技术。
+        平时使用 Python、Java 和 TypeScript 进行项目开发，也持续学习前后端开发、
+        数据可视化与 AI 应用构建，享受把想法变成可用产品的过程。
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-solid">查看项目作品</a>
+        <a href="#contact" class="btn btn-ghost">联系我</a>
+      </div>
+    </section>
+
+    <!-- 项目作品（数据驱动渲染） -->
+    <section id="work" class="section">
+      <p class="section-meta">02 · 项目作品</p>
+      <h2 class="section-title">精选项目</h2>
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="section">
+      <p class="section-meta">03 · 关于我</p>
+      <h2 class="section-title">关于我</h2>
+      <div class="about">
+        <div class="about-block">
+          <h3 class="about-heading">我是谁</h3>
+          <p>
+            我是郑杰文，软件工程专业学生，目前就读于广州软件学院。
+            当前研究方向集中在 AI 辅助开发与大语言模型应用，主要使用 Python、Java
+            和 TypeScript 进行项目开发，并持续学习前端与后端开发。
+          </p>
+        </div>
+        <div class="about-block">
+          <h3 class="about-heading">我做了什么</h3>
+          <p>
+            从职场工具到校园平台，我独立完成过多个前后端项目，包括微信小程序、
+            二手交易平台、数据可视化大屏以及基于大语言模型的课程问答助手，
+            覆盖从需求梳理、界面设计到接口开发的完整流程。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section">
+      <p class="section-meta">04 · 联系方式</p>
+      <h2 class="section-title">保持联系</h2>
+      <p class="contact-lead">软件工程专业在读，欢迎实习、合作或技术交流，随时找我。</p>
+      <ul class="contact-list">
+        <li class="contact-item">邮箱　<a href="mailto:yuimugi@sina.com">yuimugi@sina.com</a></li>
+        <li class="contact-item">所在城市　<span>中国 · 广州</span></li>
+        <li class="contact-item">微信　<span>13860186188</span></li>
+        <li class="contact-item">GitHub　<a href="https://github.com/yuimugi-dev" target="_blank" rel="noopener">github.com/yuimugi-dev</a></li>
+      </ul>
+      <div class="contact-cta">
+        <a href="mailto:yuimugi@sina.com" class="btn btn-solid">发一封邮件给我</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 郑杰文 · 广州软件学院</p>
+    </footer>
+  </main>
+
+  <!-- 项目数据 -->
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
